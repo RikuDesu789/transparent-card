@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Card</title>
+    <!-- below can be made by typing, link:html -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <div class="content">
+            <h2>01</h2>
+            <h3>Glass Card</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque inventore alias consequuntur vitae id illo excepturi incidunt tenetur nisi! Ipsa!</p>
+            <a href="#">More Detail</a>
+        </div>
+    </div>
+    <script src="./vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector(".card"), {
+            max: 15,
+            speed: 300,
+            glare: true,
+            "max-glare": 0.8,
+        });
+    </script>
+</body>
+</html>

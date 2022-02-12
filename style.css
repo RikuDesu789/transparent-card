@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* responsive　に対応するためにboxsizing border-box */
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #19b652;
+  /* flex will be applied to the direct child of the body.
+     flex を使ったおかげで、body の　direct な子クラスのcardにalign-items:centerが使えるようになる。 */
+  display: flex;
+  align-items: center; /* 縦の中央で揃える */
+  justify-content: center; /* 横の中央で揃える */
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgb(8, 236, 206), rgb(11, 219, 29));
+  /* 円形にクリップ */
+  clip-path: circle(55% at 21% 29%);
+  z-index: -1;
+}
+body::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgb(10, 255, 2), rgb(5, 245, 225));
+  /* 円形にクリップ */
+  clip-path: circle(35% at 100% 83%);
+  z-index: -1;
+}
+
+.card {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  width: 380px;
+  height: 600px;
+  display: flex;
+
+  /* move the position of the child class of .card to the center */
+  align-items: center;
+  justify-content: center;
+
+  /* align the text to the center */
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.35);
+  background-color: rgba(255, 255, 255, 0.1);
+
+  /* add blur */
+  backdrop-filter: blur(2px);
+
+  /* glare をaddした時の端っこを消す */
+  overflow: hidden;
+}
+
+.content {
+  /* relative にすることで、contentの子のh2のtopを適用できるようにした。*/
+  position: relative;
+  padding: 20px;
+  /* 200px　下に下げる */
+  transform: translateY(200px);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.card:hover .content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.card .content h2 {
+  position: absolute;
+  top: -80px;
+  right: 30px;
+  font-size: 8rem;
+  color: rgb(255, 255, 255, 0.12);
+}
+
+.card .content h3 {
+  color: white;
+  font-size: 1.8rem;
+}
+
+.card .content p {
+  font-size: 1rem;
+  color: white;
+  font-weight: 300;
+}
+
+.card .content a {
+  /* erase underline */
+  text-decoration: none;
+
+  /* cannot change the padding and height of the button unless we change it to inline-block */
+  display: inline-block;
+  padding: 8px 20px;
+  background: white;
+  margin-top: 10px;
+  border-radius: 20px;
+  color: black;
+  font-weight: 500;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
+}

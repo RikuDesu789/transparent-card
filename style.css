@@ -12,7 +12,7 @@ body {
   min-height: 100vh;
   background-color: #19b652;
   /* flex will be applied to the direct child of the body.
-     flex を使ったおかげで、body の　direct な子クラスのcardにalign-items:centerが使えるようになる。 */
+     flex を使ったおかげで、body の　direct な子クラスのcardにalign-items:centerが使えるよう  になる。 */
   display: flex;
   align-items: center; /* 縦の中央で揃える */
   justify-content: center; /* 横の中央で揃える */
